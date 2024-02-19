@@ -39,3 +39,92 @@
 - Reverse inference is the opposite of inference, being a process which helps deduce cognitive processes from brain activity
 
 ## Group 25
+- Feature extraction
+  - Time domain features (Features extracted from the time dimension)
+    - Mean value
+    - Variance
+    - Skewness
+  - Frequency domain features (Features extracted from the wave frequency dimension)
+    - Delta band frequency
+    - Theta band frequency
+    - Alpha band frequency
+    - Beta band frequency
+  - Correlation features
+    - Cross-correlation
+    - Autocorrelation
+- Approaches
+  - LSTM
+  - Gradient-Boosted Decision Trees
+  - CNN Features with Shallow Classifiers
+  - Ensembles of these
+- Kaggle discussions
+  - [Understanding Competition Data and EfficientNetB2 Starter - LB 0.43 🎉](https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification/discussion/468010)
+  - [🌩️HMS - EDA and Domain Journey🌍](https://www.kaggle.com/code/mvvppp/hms-eda-and-domain-journey)
+
+## Group 26
+- Current
+  - Baseline models: ResNet34 and ViT (Vision Transformers)
+    - Finetune on spectrograms
+  - Possibly a better CNN-based model: YOLO, but we're not sure
+- Planning
+  - Multimodal learning approach: timeseries data model + spectrogram data model.
+  - WaveNet as timeseries data model + EfficientNet as spectrogram data model
+
+## Group 27 & 28
+- Vanished into the aether
+
+## Group 29
+- Train (finetune?) a transformer since the data is sequential
+
+## Group 30
+- Train VAE to generate new spectrogram images to train on
+- Spectrograms are fed to CNN-based models (ResNet & EfficientNet) and Transformer-based models (Vision Transformer)
+- Vector representations of spectrograms directly fed to linear layer
+- Take average prediction for every predictor, then ensemble the averages.
+- Do you own spectrograms! Never trust data collection done by medical personnel, do your own data collection.
+- Literature
+  -  [Development of Expert-Level Classification of Seizures and Rhythmic and Periodic Patterns During EEG Interpretation](https://pubmed.ncbi.nlm.nih.gov/36878708/)
+  - [SPaRCNet data: Seizures, Rhythmic and Periodic Patterns in ICU Electroencephalography](https://bdsp.io/content/bdsp-sparcnet/1.1/)
+  - [Data augmentation for deep-learning-based electroencephalography](https://www.sciencedirect.com/science/article/pii/S0165027020303083)
+
+## Group 31
+- Wavelet transform: filtering seizure-relevant EEG signals from background noise
+- Feature extraction:
+  - Statistical features (e.g. mean)
+  - Hjorth parameters
+- Dragonfly Algorithm, a swarm intelligence feature selection algorithm.
+- Wavelets --> dragonfly algorithm --> DNN
+- CNN or WaveNet approach for spectrograms
+- Make an ensemble out of these
+- [EEG-based epileptic seizure detection using binary dragonfly algorithm and deep neural network](https://www.nature.com/articles/s41598-023-44318-w)
+- [PyWavelets - Wavelet Transforms in Python](https://pywavelets.readthedocs.io/en/latest/)
+
+## Group 33
+- For a single EEG, multiple experts assign a label. This means that some EEGs have many, varying labels.
+- Shit in is shit out
+- Cool ice dragon ❄️🐉❄️
+- Approach
+  1. Change architectures (ResNet34d, WaveNet, 1d-2d CNN)
+  2. Pre-built models (ResNet34d --> 26d)
+  3. Filtering frequencies (0.5 Hz - 45 Hz)
+  4. If scores improve, combine models into an ensemble
+- Kaggle discussion: [Papers & Model Architectures](https://www.kaggle.com/competitions/hms-harmful-brain-activity-classification/discussion/468771)
+
+## Group 35
+- ~70% of modern-day EEG classifications use CNNs
+- Data Augmentation
+  - Stretching the spectrograms
+  - Masking frequency bands up to 20Hz
+  - Masking time segments up to 50s
+- Merging two networks
+  - Run two separate networks: one for the EEG raw signals and one for the spectrograms
+  - Merge the predictions prior to classification (ensemble)
+
+## Group 36
+- Also vanished into the aether
+
+## Group 37
+- From literature review, SVMs are commonly used
+- We will use SVMs for EEG data and CNNs for spectrogram data
+- Considered approaches: SVM, k-NN, LDA, CNN
+- [Machine learning techniques for electroencephalogram based brain-computer interface: A systematic literature review](https://www.sciencedirect.com/science/article/pii/S2665917423001599)
