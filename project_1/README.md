@@ -11,27 +11,27 @@ We developed three different notebooks for training a model in different ways, a
 Further details may be found in our [report](/project_1/report.pdf).
 
 ## Training: Spectrograms
-[Notebook](/project_1/train_spectrograms.ipynb)
+[Notebook](/project_1/code/train_spectrograms.ipynb)
 
 Naomi Deenen experimented with different data preparation techniques to improve the model.
 Specifically, she found that Andreas Bisi's solution applied normalization only on an instance level, normalizing EEG spectrograms only by their own means and standard deviation.
 Naomi refined this process by applying a datawide normalization strategy, where all spectrograms are normalized using the mean and standard deviation of all EEG spectrograms in the dataset.
 
 ## Training: Meta-Learning
-[Notebook](/project_1/train_meta_learning.ipynb)
+[Notebook](/project_1/code/train_meta_learning.ipynb)
 
 Marieke van Vreeswijk experimented with meta-learning strategies.
 Our baseline used an ensemble of multiple resource-intensive deep learning models.
 Marieke experimented with training a simpler model that learns to copy the ensemble's behavior, in order to produce a model that is just as good as the ensemble, but much less computationally expensive.
 
 ## Training: Hyperparameters
-[Notebook](/project_1/train_hyperparameters.ipynb)
+[Notebook](/project_1/code/train_hyperparameters.ipynb)
 
 I experimented with optimizing the hyperparameters of the models in the baseline ensemble.
 I used the Optuna framework for this process and iteratively reduced the search space for optimal model results.
 
 ## Inference
-[Notebook](/project_1/inference.ipynb)
+[Notebook](/project_1/code/inference.ipynb)
 
 The notebook can also be found [at Kaggle](https://www.kaggle.com/code/naomideenen/inference/notebook).
 
